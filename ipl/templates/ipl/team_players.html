@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 style="text-align:center;color : red">{{team.team_name}} TEAM DETAILS</h2>
+<img src="{{team.team_logo.url}}">
+{% for player in players %}
+<div><a href="/ipl/details/{{player.player_id}}/">{{player.first_name}}</a> </div>
+{% endfor %}
+</body>
+</html>
