@@ -9,6 +9,10 @@
 <img src="{{team.team_logo.url}}">
 {% for player in players %}
 <div><a href="/ipl/details/{{player.player_id}}/">{{player.first_name}}</a> </div>
-{% endfor %}
+{% endfor %}<br>
+<br>
+<form>
+ <input type="button" value="Go back!" onclick="history.back()">
+</form>
 </body>
 </html>

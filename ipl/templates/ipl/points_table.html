@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    </style>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th {
+  text-align: center;
+}
+</style>
 </head>
 <body>
-{{win}} vs {{loss}}<br>
-winner==>> {{win}}
+<table>
+    <tr>
+        <th>TEAM</th>
+        <th>PLAYED</th>
+        <th>WON</th>
+        <th>LOST</th>
+        <th>POINTS</th>
+    </tr>
+    {% for team in points %}
+    <tr>
+        <td>{{team.team}}</td>
+        <td>{{team.played}}</td>
+        <td>{{team.won}}</td>
+        <td>{{team.lost}}</td>
+        <td>{{team.points}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<br>
+<form>
+ <input type="button" value="Go back!" onclick="history.back()">
+</form>
+
 </body>
 </html>

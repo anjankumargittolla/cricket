@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Team, Player, Points
+from .models import Team, Player, Points, Match
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import TeamForm, PlayerForm
 from django.shortcuts import get_object_or_404
@@ -83,6 +83,7 @@ def matches(request):
     win_tm.won += 1
     win_tm.points += 2
     win_tm.save()
+    obj = Match.objects.create(team1 = team1, team2 = team2, result = winner)
     if team1.team_name == win_tm.team.team_name:
         l_team = team2
     else:
@@ -92,4 +93,9 @@ def matches(request):
     loss_tm.lost += 1
     loss_tm.points += 0
     loss_tm.save()
-    return render(request, "ipl/points_table.html", {"win": win_tm, "loss": loss_tm,"teams": teams})
+    return render(request, "ipl/matches.html", {"win": win_tm, "loss": loss_tm,"teams": teams})
+
+
+def points(request):
+    point = Points.objects.all()
+    return render(request,"ipl/points_table.html",{"points": point})
