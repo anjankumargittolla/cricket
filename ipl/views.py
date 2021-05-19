@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from .forms import TeamForm, PlayerForm
 from .models import Team, Player, Points, Match
-
+from django.db import connection
 
 # Create your views here.
 
@@ -102,4 +102,7 @@ def total_matches(request):
 
 def points(request):
     point = Points.objects.all()
+    print(point)
+    cursor = connection.cursor()
+    cursor.execute('''SELECT * FROM ipl_points ORDER BY points''')
     return render(request, "ipl/points_table.html", {"points": point})

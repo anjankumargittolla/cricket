@@ -11,7 +11,7 @@ class Team(models.Model):
     club_state = models.CharField(max_length=15)
 
     def __str__(self):
-        return self.team_name
+        return str(self.team_name)
 
 
 class Player(models.Model):
@@ -42,7 +42,6 @@ class Points(models.Model):
     played = models.IntegerField(default=0)
     won = models.IntegerField(default=0)
     lost = models.IntegerField(default=0)
-    tied = models.IntegerField(default=0)
     points = models.IntegerField(default=0)
 
     def __str__(self):
