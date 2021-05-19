@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color: green;"> RECENT MATCHES</h1>
+<ol>
+    {% for match in matches %}
+    <li>
+        {{match.team1}} vs {{match.team2}} ==>>WINNER==>> {{match.result}}
+    </li>
+    {% endfor %}
+</ol>
+<form>
+    <input type="button" value="Go back!" onclick="history.back()">
+</form>
+</body>
+</html>

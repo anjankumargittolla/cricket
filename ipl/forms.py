@@ -1,5 +1,6 @@
 from django.forms import ModelForm
-from .models import Team,Player
+
+from .models import Team, Player
 
 
 class TeamForm(ModelForm):

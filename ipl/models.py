@@ -33,8 +33,8 @@ class Match(models.Model):
     team2 = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='team_two')
     result = models.ForeignKey(Team, max_length=50, null=True, blank=True, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return str(self.result)
+    # def __str__(self):
+    #     return str(self.result)
 
 
 class Points(models.Model):

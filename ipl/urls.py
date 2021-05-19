@@ -8,7 +8,8 @@ urlpatterns = [
     path("player/", views.player, name="player_data"),
     path("teams_details/", views.team_details, name="teams_list"),
     path("<int:team_id>/details/", views.team_players, name="team_players"),
-    path("details/<int:player_id>/",views.player_details, name = "player_details"),
-    path("matches/", views.matches, name = "matches"),
-    path("points/", views.points, name = "points"),
+    path("details/<int:player_id>/", views.player_details, name="player_details"),
+    path("matches/", views.matches, name="matches"),
+    path("points/", views.points, name="points"),
+    path("total_matches/", views.total_matches, name="total_matches"),
 ]
