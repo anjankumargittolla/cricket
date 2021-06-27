@@ -1,0 +1,49 @@
+1.
+input_data ={"A":"100", "B":"101", "c":"102"} 
+new ={}
+for key, value in input_data.items():
+    new[int(input_data[key])] = key
+print(new)
+
+
+2.Program
+input1 = [1,3,4,7,9]
+new_list = []
+for i in range(len(input1)-1):
+    if input1[i]<input1[i+1]:
+        new_list.insert(i,input1[i])
+    else:
+        new_list.insert(i,input1[i+1])
+print(new_list[-1]-new_list[1])
+
+4.
+def Sq_sum(data):
+    data = int(input("Enter a number"))
+    total = 0
+    for new in str(data):
+        total = total + int(new)**2
+    if total == 1:
+        return True
+    else:
+        return False
+Sq_sum(data)
+
+5.
+def sample_fun(data, new_data):
+    for i in range(len(data)-1):
+        for j in range(i,len(data)-1):
+            if data[i]*data[j] == new_data:
+                return i,j
+            else:
+                continue
+sample_fun([1,2,3,4],6)
+
+
+6. Palindrome
+
+input2 = input("enter a string")
+result = input2[::-1]
+if input2==result:
+    print("given string is palindrome")
+else:
+    print("given string is not palindrome")     
